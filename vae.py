@@ -98,8 +98,8 @@ class VAE:
                 loss = self.train_op(x, optimizer)
                 error, iter = error + loss, iter + 1
 
-                print(f"Error {error / iter}", end="        \r")
-            print(f"epoch {epoch} - {error / iter}")
+                print("Error %.2f" % (error / iter), end="        \r")
+            print("epoch %d - %.2f" % (epoch, error / iter))
 
 
 class DIRICHLET_VAE():
@@ -179,8 +179,8 @@ class DIRICHLET_VAE():
                 loss = self.train_op(x, y, optimizer)
                 error, iter = error + loss, iter + 1
 
-                print(f"Error {error / iter}", end="        \r")
-            print(f"epoch {epoch} - {error / iter}")
+                print("Error %.2f" % (error / iter), end="        \r")
+            print("epoch %d - %.2f" % (epoch, error / iter))
 
 
 def dense_encoder_decoder(data_dim: int,
